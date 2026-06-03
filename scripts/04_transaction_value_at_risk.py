@@ -8,15 +8,15 @@ load_dotenv()
 # ── Assumptions ──────────────────────────────────────────────────────────────
 # All assumptions must be documented and defensible in interviews
 AVG_TICKET_SIZE_RS = 1576        # RBI published average UPI ticket size FY2024-25
-BENCHMARK_TD_PCT = 0.07          # HDFC Bank — best performer in dataset
-INDUSTRY_AVG_TD_PCT = 0.52       # SBI level — large bank average
+BENCHMARK_TD_PCT = 0.07          # HDFC Bank - best performer in dataset
+INDUSTRY_AVG_TD_PCT = 0.52       # SBI level - large bank average
 # ─────────────────────────────────────────────────────────────────────────────
 
 DB_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 
 engine = create_engine(DB_URL)
 
-# Pull remitter data only — sending side is where bank infrastructure matters most
+# Pull remitter data only - sending side is where bank infrastructure matters most
 query = """
     SELECT 
         bank_name,
