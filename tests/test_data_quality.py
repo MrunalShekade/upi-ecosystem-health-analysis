@@ -25,11 +25,12 @@ def test_no_duplicate_rows(db_data):
     ).sum()
     assert dupes == 0, f"Found {dupes} duplicate rows"
 
-def test_percentage_scale(db_data):
-    """All percentage values should be between 0 and 100"""
-    for col in ['approved_pct', 'bd_pct', 'td_pct']:
-        assert db_data[col].between(0, 100).all(), \
-            f"{col} has values outside 0-100 range"
+def test_percentage_sum(db_data):
+    """approved_pct + bd_pct + td_pct should be close to 100 for each row"""
+    clean = db_data.dropna(subset=['approved_pct', 'bd_pct', 'td_pct'])
+    total = clean['approved_pct'] + clean['bd_pct'] + clean['td_pct']
+    assert total.between(99, 101).all(), \
+        f"Percentage columns do not sum to ~100 for all rows"
 
 def test_percentage_scale(db_data):
     """All percentage values should be between 0 and 100"""
