@@ -18,22 +18,22 @@ The analysis identifies which banks are dragging down ecosystem reliability, qua
 
 4-page interactive Power BI dashboard. Screenshots below, full file not included due to embedded database connection strings.
 
-### Page 1 — Executive Summary
+### Page 1 - Executive Summary
 ![Executive Summary](dashboard/01_executive_summary.png)
 
 KPI cards for total transaction volume, ecosystem approval rate, and transaction value at risk, with a ranked view of the worst-performing banks by technical decline rate.
 
-### Page 2 — Bank Rankings
+### Page 2 - Bank Rankings
 ![Bank Rankings](dashboard/02_bank_rankings.png)
 
 Full bank-by-bank ranking with remitter/beneficiary toggle and conditional formatting (red/amber/green) on failure rate.
 
-### Page 3 — Trend Analysis
+### Page 3 - Trend Analysis
 ![Trend Analysis](dashboard/03_trend_analysis.png)
 
 Ecosystem-wide approval rate trend alongside a bank-level drill-down showing the UP Gramin Bank spike, recovery, and regression pattern tied to the 2025 RRB merger.
 
-### Page 4 — Transaction Value at Risk
+### Page 4 - Transaction Value at Risk
 ![Transaction Value at Risk](dashboard/04_transaction_value_at_risk.png)
 
 Top 15 banks by absolute transaction value at risk, alongside a scatter plot showing the inverse relationship between transaction volume and failure rate.
@@ -115,7 +115,7 @@ upi-ecosystem-health-analysis/
 
 ## Database Schema
 
-**Table:** `public.upi_data` — 2,479 rows
+**Table:** `public.upi_data` - 2,479 rows
 
 | Column           | Type   |           Description             |
 |------------------|--------|-----------------------------------|
